@@ -1,0 +1,45 @@
+body {
+    background-image: url('img/background_image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+.box{
+    display: block;
+    background-color: #fff;
+    width : 400px;
+    height: 500px;
+    margin: 210px auto;
+    border-radius: 25px;
+    box-shadow: 10px 10px #500dba;
+}
+input, button, a{
+    display: block;
+    margin: 40px auto;
+    height: 30px;
+    width: 200px;
+    border-radius: 15px;
+    padding: 0 5px;
+}
+h3{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 50px;
+    color: #202020;
+    text-align: center;
+    text-shadow: 2px 2px 8px #500dba;
+    margin-bottom: 60px;
+}
+button{
+    margin-top: 80px;
+}
+button:hover {
+    background-color: #500dba;
+}
+a{
+    text-align: center;
+    text-decoration: none;
+    color: #202020;
+}
