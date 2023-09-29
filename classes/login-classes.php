@@ -27,19 +27,19 @@ class Login extends Dbh {
             exit();
         }
         elseif($checkPwd == true){
-            $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_uid = ? AND users_pwd = ?;');
+            $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_uid = ? OR users_email = ? AND users_pwd = ?;');
 
-            if(!$stmt->execute(array($uid, $pwd))) {
+            if(!$stmt->execute(array($uid, $uid, $pwd))) {
                 $stmt = null;
                 header("location: ../index.php?error=stmtfailed");
                 exit();
             }
 
-            /*if($stmt->rowCount() == 0) {
+            if($stmt->rowCount() == 0) {
                 $stmt = null;
                 header("location: ../index.php?error=usernotfound2");
                 exit();
-            }*/
+            }
 
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
